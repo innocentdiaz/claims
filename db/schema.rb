@@ -13,6 +13,10 @@
 ActiveRecord::Schema[8.1].define(version: 2026_10_16_030039) do
   create_table "claims", force: :cascade do |t|
     t.integer "item_id", null: false
+    t.text "story"
+    t.float "plausible"
+    t.float "match"
+    t.float "specificity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_claims_on_item_id"

@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  has_many :claims
+
   include S1::Measurable
   measurable_as { { description:, title:, since: created_at&.strftime("%Y-%m-%d") } }   # hash shorthand for columns; created_at is nil before the first save
 
