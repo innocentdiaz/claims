@@ -1,0 +1,6 @@
+<nav role="tablist" class="flex gap-1 border-b border-gray-300">
+  <% { "Report found item" => new_claim_path, "Report lost item" => root_path }.each do |label, path| %>
+    <%= link_to label, path, role: "tab", aria: { selected: current_page?(path) },
+          class: "-mb-px border-b-2 border-transparent px-4 py-2 text-gray-500 aria-selected:border-blue-600 aria-selected:font-semibold aria-selected:text-gray-900" %>
+  <% end %>
+</nav>

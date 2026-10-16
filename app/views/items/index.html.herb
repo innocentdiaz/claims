@@ -1,2 +1,1 @@
-<h1 class="text-xl font-bold">Items</h1>
-<%= render "shared/tabs" %>
+<%= render "items/form" %>
