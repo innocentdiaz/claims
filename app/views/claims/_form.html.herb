@@ -1,0 +1,10 @@
+<%# herb:state (story: "") %>
+<form action="/claims" method="post" class="flex flex-col gap-3">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <textarea name="body" required rows="4" maxlength="<%= Claim::STORY_LIMIT %>" placeholder="Describe what you found" data-herb-set="story=$value" class="rounded border border-gray-300 px-3 py-2"></textarea>
+  <p class="flex justify-between text-sm text-gray-500">
+    <span><%= Claim.specificity_label(story) %></span>
+    <span><%= story.length %>/<%= Claim::STORY_LIMIT %></span>
+  </p>
+  <button class="self-start rounded bg-blue-600 px-4 py-2 text-white">Report found item</button>
+</form>
