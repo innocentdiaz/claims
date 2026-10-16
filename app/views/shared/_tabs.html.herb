@@ -1,0 +1,10 @@
+<%# herb:state (tab: "found") %>
+<nav role="tablist" class="flex gap-1 border-b border-gray-300">
+  <button role="tab" aria-selected="<%= tab == 'found' %>" data-herb-set="tab=found" class="-mb-px border-b-2 border-transparent px-4 py-2 text-gray-500 aria-selected:border-blue-600 aria-selected:font-semibold aria-selected:text-gray-900">Report found item</button>
+  <button role="tab" aria-selected="<%= tab == 'lost' %>" data-herb-set="tab=lost" class="-mb-px border-b-2 border-transparent px-4 py-2 text-gray-500 aria-selected:border-blue-600 aria-selected:font-semibold aria-selected:text-gray-900">Report lost item</button>
+</nav>
+<% if tab == "found" %>
+  <section role="tabpanel" class="py-6">New claim</section>
+<% else %>
+  <section role="tabpanel" class="py-6"><%= render "items/form" %></section>
+<% end %>
