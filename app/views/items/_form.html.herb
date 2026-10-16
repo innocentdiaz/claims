@@ -1,0 +1,11 @@
+<%# herb:state (body: "") %>
+<form action="/items" method="post" class="flex flex-col gap-3">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input name="item[title]" required placeholder="Title" class="rounded border border-gray-300 px-3 py-2">
+  <textarea name="item[description]" maxlength="<%= Item::DESCRIPTION_LIMIT %>" rows="4" placeholder="Description" data-herb-set="body=$value" class="rounded border border-gray-300 px-3 py-2"></textarea>
+  <p class="flex justify-between text-sm text-gray-500">
+    <span><%= Item.category_label(body) %></span>
+    <span><%= body.length %>/<%= Item::DESCRIPTION_LIMIT %></span>
+  </p>
+  <button class="self-start rounded bg-blue-600 px-4 py-2 text-white">Report lost item</button>
+</form>
