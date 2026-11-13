@@ -67,7 +67,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "reactionview", "~> 0.6.0"
+gem "reactionview", "~> 0.6.1"
 
 gem "s1",       github: "innocentdiaz/s1_ruby"   # S1 primitives; self-hosted via S1::Providers::Protocol
 gem "s1-rails", github: "innocentdiaz/s1_rails"
